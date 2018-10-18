@@ -1,0 +1,178 @@
+body {
+	background-color:rgba(78, 197, 236, 0.3);
+}
+
+.banner {
+	width:100%;
+}
+
+/* https://www.w3schools.com/css/css_navbar.asp */
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:rgba(127, 127, 127, 0.6);
+	width:100%;
+}
+
+.nav {
+    float:left;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size:20px;
+	width:33%;
+	text-align:center;
+}
+
+.nav a {
+    display:block;
+    color:white;
+    text-align:center;
+	padding:14px 16px;
+    text-decoration:none;
+}
+
+.nav a:hover {
+    background-color:rgba(127, 127, 127, 0.9);
+	text-decoration:none;
+}
+
+.arrow {
+    float:left;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	width:33%;
+	vertical-align:middle;
+	
+	/* Code to make arrows unselectable */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.arrow:hover {
+	cursor:pointer;
+}
+
+.ep {
+    float:left;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size:20px;
+	width:33%;
+	vertical-align:middle;
+}
+
+.hostsBody {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	line-height:125%;
+	width:100%;
+	padding-bottom:20px;
+	padding-left:15px;
+	padding-right:15px;
+	font-size:20px;
+	text-align:left;
+	vertical-align:top;
+}
+
+#homepageTop {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	line-height:125%;
+	width:100%;
+	padding-bottom:20px;
+	padding-left:40px;
+	padding-right:15px;
+	font-size:20px;
+	text-align:left;
+}
+
+#homepageBody {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	line-height:125%;
+	text-align:right;
+	width:100%;
+	height:auto;
+	vertical-align:top;
+	font-size:20px;
+	border-top:2px solid black;
+}
+
+.bottomBorder {
+	width:100%;
+	border-bottom:2px solid black;
+}
+
+#updates {
+	width:60%;
+	vertical-align:top;
+	text-align:left;
+	padding-right:15px;
+	padding-left:40px;
+}
+
+#dlsoneOrigin {
+	width:40%;
+	text-align:left;
+	vertical-align:top;
+	padding-left:40px;
+	padding-right:15px;
+	border-top:2px solid black;
+}
+
+.pic {
+	text-align:left;
+	margin-bottom:10px;
+	margin-right:40px;
+	width:250px;
+	border:2px solid black;
+}
+
+#defaultPic {
+	border:2px solid black;
+}
+
+.audioElement {
+	width:100%;
+}
+
+#regularText {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:normal;
+}
+
+a:link {
+	font-size:100%;
+	color:rgba(0, 0, 255, 1);
+	text-decoration:none;
+}
+
+a:visited {
+	font-size:100%;
+	color:rgba(0, 0, 255, 1);
+	text-decoration:none;
+}
+
+a:hover {
+	font-size:100%;
+	color:black;
+	text-decoration:underline;
+}
+
+@media print {
+	.banner, #navBar {
+		display:none;
+	}
+
+	@page {
+		margin: 0.5cm;
+	}
+}
+
+/* Source: http://www.htmlgoodies.com/beyond/css/targeting-specific-devices-in-your-style-sheets.html */
+@media only screen and (max-device-width:480px) {
+	h1, td, element, a, p, body {
+		font-size:10px;
+	} 
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Dlsone Podcast Homepage</title>
+		<link rel="stylesheet" type="text/css" href="dlsone.css" />
+		<link rel="shortcut icon" href="sharedPictures/dlsoneIcon.png">
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="The official website for the Dlsone Podcast, a monthly cubing-related podcast! Check out this page for all the episodes, information about the hosts, news, and more!">
+		<meta name="keywords" content="Dlsone,Podcast,Dlsone Podcast,Cubing,Rubik's Cube,Speedcubing,Speedsolving,Rubik's,Rubix,Cubers,Collaboration,DGCubes,Derpy Cuber,Hashtag Cuber,TheProgrammingCuber,TheRubiksCubed">
+		<meta name="author" content="Daniel Goodman">
+		
+		<!--CODE ADAPTED FROM https://productforums.google.com/forum/#!topic/docs/RMKFBdfd3t4-->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			google.load("visualization", "1", {packages:["corechart"]});
+			google.setOnLoadCallback(drawSheetName);
+
+			function drawSheetName() {
+				// Selects the columns to be extracted
+				var queryString = encodeURIComponent('SELECT A, D');
+
+				// Change headers=1 to headers=0 to include the first row
+				var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1fK7mYovocRAxLGtO9Vmsz86WMQFkliWszap5pkt4UL8/gviz/tq?gid=0&headers=1&tq=' + queryString); 
+				query.send(handleSampleDataQueryResponse);
+			}
+
+			function handleSampleDataQueryResponse(response) {
+				var data = response.getDataTable();
+				
+				var episodes = data.getValue(0,0) - 1;
+				var html = "";
+				for (i = episodes; i >= 0; i--) {
+					html += data.getValue(i,1);	
+				}
+				
+				document.getElementById("posts").innerHTML = html;
+			}
+		</script>
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-97373094-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+
+	<body>
+	
+		<table class="banner">
+			<tr>
+				<td>
+					<a href="https://www.youtube.com/channel/UC1S2PJpLSVwj_ex5CRx60pQ" target="_blank"><img src="sharedPictures/banner2.png" class="banner" alt="Banner"></a>
+				</td>
+			</tr>
+		</table>
+
+		<ul>
+			<li class="nav"><a href="#" style="font-weight:bold;color:black;">Homepage</a></li>
+			<li class="nav"><a href="/hosts" style="color:white;">Hosts</a></li>
+			<li class="nav" style="width:34%;"><a href="/episodes" style="color:white;">Episodes</a></li>
+		</ul>
+
+		<form action="episodes/oldVersion.php" method="post">
+			<input type="text" name="search">
+			<input type="submit">
+		</form>
+		
+		<table id="homepageTop">
+			<tr>
+				<td>
+					<br/>
+					<h1 id="regularText">Welcome to the official website for the Dlsone Podcast, a monthly collaboration between five YouTube cubers:
+					<a href="http://www.youtube.com/therubikscubed" target="_blank">TheRubiksCubed</a>,
+					<a href="http://www.youtube.com/dgcubes" target="_blank">DGCubes</a>,
+					<a href="http://www.youtube.com/derpycuber" target="_blank">Derpy Cuber</a>,
+					<a href="http://www.youtube.com/theprogrammingcuber" target="_blank">TheProgrammingCuber</a>, and
+					<a href="http://www.youtube.com/hashtagcuber" target="_blank">Hashtag Cuber</a>.
+					You can listen to the podcast on both this website and
+					<a href="https://www.youtube.com/channel/UC1S2PJpLSVwj_ex5CRx60pQ" target="_blank">our YouTube channel</a>.
+					To listen here, check out the <a href="episodes">Episodes</a> page.</h1>
+				</td>
+			</tr>
+		</table>
+
+		<br/>
+
+		<table id ="homepageBody">
+			<tr><td></td></tr> <!--For style purposes-->
+			
+			<tr>
+				<td id="updates">
+					<br/>
+					<b>News and updates:</b>
+					<br/><br/>
+
+					<span id="posts"></span>
+					
+					<br/><br/>
+				</td>
+			</tr>
+			
+			<tr>				
+				<td id="dlsoneOrigin">
+					<br/>
+					<b>Origin of dlsone:</b>
+					<br/><br/>	
+					<img src="indexPictures/dlsoneOrigin.PNG" id="defaultPic" alt="Origin of dlsone" />
+					<br/><br/>
+					We have since figured out that Adam meant to type "do some." Thanks to the many listeners who figured it out right away!
+					<br/><br/>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>										
